@@ -8,8 +8,17 @@
 .jumbotron {
   margin-top: 2.5rem;
 
-  img {
-    width: 50%;
+  .logo {
+    img {
+      padding-left: 4rem;
+      width: 50%;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding-right: 4rem;
   }
 }
 
