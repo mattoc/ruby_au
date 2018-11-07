@@ -1,107 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-    <title>Ruby Australia</title>
-    <meta content="Ruby Australia" name="description"/>
-    <meta content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth, western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can, programming, meetup, group, user group, conferences, events" name="keywords"/>
-    <meta content="width=device-width" name="viewport"/>
+<head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <title>Ruby Australia</title>
+  <meta content="Ruby Australia" name="description"/>
+  <meta content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth, western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can, programming, meetup, group, user group, conferences, events" name="keywords"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-  </head>
+  <%= javascript_pack_tag 'application' %>
+  <%= stylesheet_pack_tag 'application' %>
+</head>
 
-  <body>
-    <header role="banner">
-      <a href="/">
-        <span class="logo">Ruby Australia</span>
-      </a>
-    </header>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="sidebar fixed-top col-md-2 d-none d-md-block">
+      <div class="sidebar-sticky">
+        <header role="banner">
+          <a href="/">
+            <%= image_tag 'logo_transparent', alt: '', width: 20, height: 16 %>
+            <span class="logo">Ruby Australia</span>
+          </a>
+        </header>
 
-    <aside id="meta">
-      <nav role="navigation">
-        <h3>My Account</h3>
-        <ul>
-          <% if signed_in? %>
-            <li>
+        <aside id="meta">
+          <nav role="navigation">
+            <h3>My Account</h3>
+            <ul>
+              <% if signed_in? %>
+                <li>
 
-            </li>
-            <li>
-              <%= link_to 'My profile', profile_path %>
-            </li>
-            <li>
-              <%= button_to 'Sign out', sign_out_path,  { method: :delete, class: 'sign_out' } %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to 'Sign in', sign_in_path %>
-            </li>
-            <li>
-              <%= link_to 'Join Ruby Australia', sign_up_path %>
-            </li>
-          <% end %>
-        </ul>
+                </li>
+                <li>
+                  <%= link_to 'My profile', profile_path %>
+                </li>
+                <li>
+                  <%= button_to 'Sign out', sign_out_path, {method: :delete, class: 'sign_out'} %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to 'Sign in', sign_in_path %>
+                </li>
+                <li>
+                  <%= link_to 'Join Ruby Australia', sign_up_path %>
+                </li>
+              <% end %>
+            </ul>
 
-        <h3>Association</h3>
-        <ul>
-          <li>
-            <%= link_to 'Committee Members', "/committee-members" %>
-          </li>
-          <li>
-            <%= link_to 'Meeting Minutes', "https://forum.ruby.org.au/c/ruby-au/meetings" %>
-          </li>
-          <li>
-            <%= link_to 'Code of Conduct', "/code-of-conduct" %>
-          </li>
-          <li>
-            <%= link_to 'Constitution', "/constitution" %>
-          </li>
-          <li>
-            <%= link_to 'Sponsorship', "/sponsorship" %>
-          </li>
-        </ul>
+            <h3>Association</h3>
+            <ul>
+              <li>
+                <%= link_to 'Committee Members', "/committee-members" %>
+              </li>
+              <li>
+                <%= link_to 'Meeting Minutes', "https://forum.ruby.org.au/c/ruby-au/meetings" %>
+              </li>
+              <li>
+                <%= link_to 'Code of Conduct', "/code-of-conduct" %>
+              </li>
+              <li>
+                <%= link_to 'Constitution', "/constitution" %>
+              </li>
+              <li>
+                <%= link_to 'Sponsorship', "/sponsorship" %>
+              </li>
+            </ul>
 
-        <h3>Events</h3>
-        <ul>
-          <li>
-            <%= link_to 'Rails Camp', "/#railscamp" %>
-          </li>
-          <li>
-            <%= link_to 'RubyConf AU', "/#rubyconf-au" %>
-          </li>
-          <li>
-            <%= link_to 'Meetups', "/#meetups" %>
-          </li>
-          <li>
-            <%= link_to 'Rails Girls', "/rails-girls" %>
-          </li>
-        </ul>
+            <h3>Events</h3>
+            <ul>
+              <li>
+                <%= link_to 'Rails Camp', "/#railscamp" %>
+              </li>
+              <li>
+                <%= link_to 'RubyConf AU', "/#rubyconf-au" %>
+              </li>
+              <li>
+                <%= link_to 'Meetups', "/#meetups" %>
+              </li>
+              <li>
+                <%= link_to 'Rails Girls', "/rails-girls" %>
+              </li>
+            </ul>
 
-        <h3>Community</h3>
-        <ul>
-          <li>
-            <%= link_to 'Forum (Ruby Down Under)', forum_path, target: :_blank %>
-          </li>
-          <li>
-            <%= link_to 'Chat (Slack)', slack_path, target: :_blank %>
-          </li>
-          <li>
-            <%= link_to 'Videos', videos_path, target: :_blank %>
-          </li>
-          <li>
-            <%= link_to 'Mailing list', roro_mailing_list_path, target: :_blank %>
-          </li>
-        </ul>
+            <h3>Community</h3>
+            <ul>
+              <li>
+                <%= link_to 'Forum (Ruby Down Under)', forum_path, target: :_blank %>
+              </li>
+              <li>
+                <%= link_to 'Chat (Slack)', slack_path, target: :_blank %>
+              </li>
+              <li>
+                <%= link_to 'Videos', videos_path, target: :_blank %>
+              </li>
+              <li>
+                <%= link_to 'Mailing list', roro_mailing_list_path, target: :_blank %>
+              </li>
+            </ul>
 
-        <h3><%= link_to "Contact us", "/contact" %></h3>
-      </nav>
-    </aside>
+            <h3><%= link_to "Contact us", "/contact" %></h3>
+          </nav>
+        </aside>
+      </div>
+    </nav>
 
-    <section role="main">
+    <section role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
@@ -109,9 +116,13 @@
       </div>
       <%= yield %>
     </section>
+  </div>
 
+  <div class="row">
     <footer role="contentinfo">
       <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
     </footer>
-  </body>
+  </div>
+</div>
+</body>
 </html>

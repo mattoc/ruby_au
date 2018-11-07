@@ -1,8 +1,23 @@
-<p id="mission-statement">
+<% if true %>
+<div id="upcoming" class="py-3 text-center">
+  <a class="railscamp bg-white text-primary py-1 px-5">rails camp tickets on sale now!</a>
+</div>
+<% end %>
+
+<div id="mission-statement" class="d-flex">
+  <%#
   The founding purpose of Ruby Australia is to further the use and adoption of
   the Ruby programming language in Australia, and to support and encourage a
   vibrant community around the language and related technologies.
-</p>
+  %>
+  <div class="pl-5 pr-3 pt-5 pb-5 flex-shrink-0 flex-grow-0">
+    <%= image_tag 'ruby_au_logo_new', alt: 'Ruby Australia logo', width: 75, height: 65 %>
+  </div>
+  <div class="pr-3 pt-5 pb-5 flex-fill">
+    <p>RubyAU is a friendly community of coders who meet semi-regularly, have fun,
+      learn from each other and refine our craft.</p>
+  </div>
+</div>
 
 <section id="meetups">
   <h3>Meetups</h3>

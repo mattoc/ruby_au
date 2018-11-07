@@ -13,6 +13,8 @@ gem 'compass-normalize'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
 
+gem 'webpacker', '~> 3.5'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
